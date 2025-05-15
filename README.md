@@ -15,22 +15,19 @@ This project is a fullstack application built with [Bun](https://bun.sh/), conta
 
 ### 1. Clone the repository
 
-ash
+```
 git clone https://github.com/WolfHunter-HKIT/announcement-board.git
 cd announcement-board
+```
 
 ### 2. Install dependencies
 
 Install all dependencies from both frontend and backend:
 
-ash
+```
 cd frontend && bun install
 cd ../backend && bun install
-
-Or install from the root using a workspace setup (if configured):
-
-ash
-bun install
+```
 
 ---
 
@@ -40,13 +37,15 @@ bun install
 
 #### On **Git Bash / WSL / Linux / macOS**:
 
-ash
+```
 ./dev.sh
+```
 
 #### On **Windows CMD / PowerShell**:
 
-md
+```
 dev.bat
+```
 
 This will start both servers in parallel, each in its own terminal or process.
 
