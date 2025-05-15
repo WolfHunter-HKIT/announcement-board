@@ -1,11 +1,7 @@
-Absolutely — here’s your full `README.md` as **one complete file**, ready to copy and paste:
-
 ---
-
 # Fullstack Bun Project
 
 This project is a fullstack application built with [Bun](https://bun.sh/), containing separate frontend and backend apps running in parallel.
-
 ---
 
 ## ⚙️ Requirements
