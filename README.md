@@ -16,8 +16,8 @@ This project is a fullstack application built with [Bun](https://bun.sh/), conta
 ### 1. Clone the repository
 
 ash
-git clone https://github.com/your-username/your-project.git
-cd your-project
+git clone https://github.com/WolfHunter-HKIT/announcement-board.git
+cd announcement-board
 
 ### 2. Install dependencies
 
