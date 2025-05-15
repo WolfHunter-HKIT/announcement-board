@@ -74,16 +74,8 @@ If you're using processes started in the background, you may need to kill them m
 
 ---
 
-## 📬 Feedback
-
-Feel free to open issues or submit PRs if you find bugs or have suggestions.
-
----
-
 ## 📝 License
 
-MIT © Your Name
+MIT © TwinWolf
 
 ---
-
-Let me know if you'd like it personalized for a specific framework (like React, Vue, or Express) or deployment instructions added.
