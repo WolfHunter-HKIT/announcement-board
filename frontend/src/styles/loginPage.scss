@@ -1,0 +1,98 @@
+// Import JetBrains Mono font from Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap');
+
+// Color & Font Palette
+$font-family: 'JetBrains Mono', monospace;
+
+$bg: #0e0e10;
+$surface: #1a1b1f;
+$surface-elevated: #2a2b30;
+$primary: #9b5de5;
+$primary-hover: #7a36d1;
+$text: #ededed;
+$muted: #aaaaaa;
+$border: #2e2f36;
+
+.login-card {
+	background-color: $surface;
+	border-radius: 16px;
+	padding: 32px;
+	width: 40vw;
+	min-width: 400px;
+	max-width: 550px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+	font-family: $font-family;
+
+	.login-title {
+		text-align: center;
+		font-size: 28px;
+		margin-bottom: 24px;
+		font-weight: 600;
+		letter-spacing: 0.5px;
+		text-transform: uppercase;
+	}
+
+	.login-form {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+
+		label {
+			font-size: 14px;
+			color: $muted;
+		}
+
+		input {
+			padding: 12px;
+			background-color: $surface-elevated;
+			border: 1px solid $border;
+			border-radius: 10px;
+			color: $text;
+			font-size: 16px;
+			font-family: $font-family;
+
+			&::placeholder {
+				color: $muted;
+			}
+
+			&:focus {
+				outline: none;
+				border-color: $primary;
+				box-shadow: 0 0 0 2px $primary;
+			}
+		}
+
+		button {
+			padding: 12px;
+			background-color: $primary;
+			border: none;
+			border-radius: 10px;
+			color: white;
+			font-weight: bold;
+			font-size: 16px;
+			cursor: pointer;
+			transition: background-color 0.2s ease;
+			font-family: $font-family;
+
+			&:hover {
+				background-color: $primary-hover;
+			}
+		}
+	}
+
+	.signup-text {
+		text-align: center;
+		margin-top: 20px;
+		font-size: 14px;
+		color: $muted;
+
+		a {
+			color: $primary;
+			text-decoration: none;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}

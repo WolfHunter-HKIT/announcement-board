@@ -1,11 +1,15 @@
-import express, { json } from 'express';
+// server.js
+
+import express from 'express';
+import cors from 'cors';
 import { createPool } from 'mysql2';
 import tableRoutes from './routes/tableRoutes.js';
 
 const app = express();
 const port = 3000;
 
-app.use(json());
+app.use(express.json());
+app.use(cors());
 
 const db = createPool({
 	host: 'localhost',
