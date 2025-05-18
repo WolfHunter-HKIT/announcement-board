@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap");
+.login-card {
+  background-color: #1a1b1f;
+  border-radius: 16px;
+  padding: 32px;
+  width: 40vw;
+  min-width: 400px;
+  max-width: 550px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  font-family: "JetBrains Mono", monospace;
+}
+.login-card .login-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 24px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.login-card .login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.login-card .login-form label {
+  font-size: 14px;
+  color: #aaaaaa;
+}
+.login-card .login-form input {
+  padding: 12px;
+  background-color: #2a2b30;
+  border: 1px solid #2e2f36;
+  border-radius: 10px;
+  color: #ededed;
+  font-size: 16px;
+  font-family: "JetBrains Mono", monospace;
+}
+.login-card .login-form input::-moz-placeholder {
+  color: #aaaaaa;
+}
+.login-card .login-form input::placeholder {
+  color: #aaaaaa;
+}
+.login-card .login-form input:focus {
+  outline: none;
+  border-color: #9b5de5;
+  box-shadow: 0 0 0 2px #9b5de5;
+}
+.login-card .login-form button {
+  padding: 12px;
+  background-color: #9b5de5;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-family: "JetBrains Mono", monospace;
+}
+.login-card .login-form button:hover {
+  background-color: #7a36d1;
+}
+.login-card .signup-text {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #aaaaaa;
+}
+.login-card .signup-text a {
+  color: #9b5de5;
+  text-decoration: none;
+}
+.login-card .signup-text a:hover {
+  text-decoration: underline;
+}/*# sourceMappingURL=loginPage.css.map */

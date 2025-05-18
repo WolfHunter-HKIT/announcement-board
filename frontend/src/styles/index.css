@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap");
+:root {
+  --font-family: "JetBrains Mono", monospace;
+  --color-bg: #0e0e10;
+  --color-surface: #1a1b1f;
+  --color-surface-elevated: #2a2b30;
+  --color-primary: #9b5de5;
+  --color-primary-hover: #7a36d1;
+  --color-text: #ededed;
+  --color-muted: #aaaaaa;
+  --color-border: #2e2f36;
+  --color-success: #43e97b;
+  --color-warning: #ffd166;
+  --color-error: #ef476f;
+  --color-info: #3a86ff;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-family: var(--font-family);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  line-height: 1.6;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+input,
+textarea,
+button,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.text-muted {
+  color: var(--color-muted);
+}
+
+.bg-surface {
+  background-color: var(--color-surface);
+}
+
+.bg-surface-elevated {
+  background-color: var(--color-surface-elevated);
+}
+
+.border {
+  border: 1px solid var(--color-border);
+}
+
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.password-wrapper input {
+  flex: 1;
+}
+.password-wrapper .toggle-password {
+  position: absolute;
+  right: 12px;
+  font-size: 13px;
+  color: var(--color-muted);
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  transition: color 0.2s ease;
+}
+.password-wrapper .toggle-password:hover {
+  color: var(--color-primary);
+}
+
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.password-wrapper input {
+  flex: 1;
+}
+.password-wrapper .toggle-password {
+  position: absolute;
+  right: 12px;
+  font-size: 13px;
+  color: var(--color-muted);
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  transition: color 0.2s ease;
+}
+.password-wrapper .toggle-password:hover {
+  color: var(--color-primary);
+}/*# sourceMappingURL=index.css.map */
