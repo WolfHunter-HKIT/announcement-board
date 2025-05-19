@@ -1,6 +1,7 @@
 @import 'index.scss'; // Assuming your global styles and variables are in index.scss
 
 .signup-card {
+	align-self: center;
 	background-color: var(--color-surface);
 	border-radius: 16px;
 	padding: 32px;

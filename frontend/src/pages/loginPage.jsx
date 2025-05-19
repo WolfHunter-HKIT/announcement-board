@@ -1,17 +1,17 @@
-import { useEffect, useState } from 'react';
-// import CompareHash from '../../../backend/auth/CompareHash';
+import { use, useEffect, useState } from 'react';
 import '../styles/loginPage.css';
-import '../styles/index.css';
 import FetchAll from '../sql/FetchAll';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
+import { Link, useNavigate } from 'react-router-dom';
 import VerifyPassword from '../auth/VerifyPassword';
 
 const LoginPage = () => {
+	let navigate = useNavigate();
 	const [email, setEmail] = useState('');
-	const [password, setPassword] = useState('');
-	const [passwordReveal, setPasswordReveal] = useState('password');
-	const [passwordButton, setPasswordButton] = useState('Show');
+	const [password, setPassword] = useState({
+		content: '',
+		reveal: 'password',
+		buttonState: 'Show',
+	});
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -24,13 +24,19 @@ const LoginPage = () => {
 
 	const handleLogin = async (e) => {
 		e.preventDefault();
-
-		await VerifyPassword(email, password);
+		const res = await VerifyPassword(email, password.content);
+		console.log(res);
+		if (res.data.success) {
+			navigate('/');
+		}
 	};
 
 	const togglePassword = () => {
-		setPasswordReveal((prev) => (prev === 'password' ? 'text' : 'password'));
-		setPasswordButton((prev) => (prev === 'Show' ? 'Hide' : 'Show'));
+		setPassword((prev) => ({
+			...prev,
+			reveal: prev.reveal === 'password' ? 'text' : 'password',
+			buttonState: prev.buttonState === 'Show' ? 'Hide' : 'Show',
+		}));
 	};
 
 	return (
@@ -42,9 +48,21 @@ const LoginPage = () => {
 
 				<label htmlFor='password'>Password</label>
 				<div className='password-wrapper'>
-					<input type={passwordReveal} id='password' placeholder='••••••••' value={password} onChange={(e) => setPassword(e.target.value)} required />
+					<input
+						type={password.reveal}
+						id='password'
+						placeholder='••••••••'
+						value={password.content}
+						onChange={(e) =>
+							setPassword((prev) => ({
+								...prev,
+								content: e.target.value,
+							}))
+						}
+						required
+					/>
 					<span className='toggle-password' onClick={togglePassword}>
-						{passwordButton}
+						{password.buttonState}
 					</span>
 				</div>
 

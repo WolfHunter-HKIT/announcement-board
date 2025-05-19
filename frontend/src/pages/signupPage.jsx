@@ -5,20 +5,30 @@ import '../styles/signupPage.css';
 const SignupPage = () => {
 	const [username, setUsername] = useState('');
 	const [email, setEmail] = useState('');
-	const [password, setPassword] = useState('');
-	const [passwordReveal, setPasswordReveal] = useState('password');
-	const [passwordButton, setPasswordButton] = useState('Show');
-	const [passwordConfirm, setPasswordConfirm] = useState('');
-	const [passwordConfirmReveal, setPasswordConfirmReveal] = useState('password');
-	const [passwordConfirmButton, setPasswordConfirmButton] = useState('Show');
+	const [password, setPassword] = useState({
+		content: '',
+		reveal: 'password',
+		buttonState: 'Show',
+	});
+	const [passwordConfirm, setPasswordConfirm] = useState({
+		content: '',
+		reveal: 'password',
+		buttonState: 'Show',
+	});
 
 	const togglePassword = () => {
-		setPasswordReveal((prev) => (prev === 'password' ? 'text' : 'password'));
-		setPasswordButton((prev) => (prev === 'Show' ? 'Hide' : 'Show'));
+		setPassword((prev) => ({
+			...prev,
+			reveal: prev.reveal === 'password' ? 'text' : 'password',
+			buttonState: prev.buttonState === 'Show' ? 'Hide' : 'Show',
+		}));
 	};
 	const togglePasswordConfirm = () => {
-		setPasswordConfirmReveal((prev) => (prev === 'password' ? 'text' : 'password'));
-		setPasswordConfirmButton((prev) => (prev === 'Show' ? 'Hide' : 'Show'));
+		setPasswordConfirm((prev) => ({
+			...prev,
+			reveal: prev.reveal === 'password' ? 'text' : 'password',
+			buttonState: prev.buttonState === 'Show' ? 'Hide' : 'Show',
+		}));
 	};
 
 	return (
@@ -33,17 +43,31 @@ const SignupPage = () => {
 
 				<label htmlFor='password'>Password</label>
 				<div className='password-wrapper'>
-					<input type={passwordReveal} id='password' placeholder='••••••••' value={password} onChange={(e) => setPassword(e.target.value)} required />
+					<input
+						type={password.reveal}
+						id='password'
+						placeholder='••••••••'
+						value={password.content}
+						onChange={(e) => setPassword((prev) => ({ ...prev, content: e.target.value }))}
+						required
+					/>
 					<span className='toggle-password' onClick={togglePassword}>
-						{passwordButton}
+						{password.buttonState}
 					</span>
 				</div>
 
 				<label htmlFor='passwordConfirm'>Confirm Password</label>
 				<div className='password-wrapper'>
-					<input type={passwordConfirmReveal} id='passwordConfirm' placeholder='••••••••' value={passwordConfirm} onChange={(e) => setPasswordConfirm(e.target.value)} required />
+					<input
+						type={passwordConfirm.reveal}
+						id='passwordConfirm'
+						placeholder='••••••••'
+						value={passwordConfirm.content}
+						onChange={(e) => setPasswordConfirm((prev) => ({ ...prev, content: e.target.value }))}
+						required
+					/>
 					<span className='toggle-password' onClick={togglePasswordConfirm}>
-						{passwordConfirmButton}
+						{passwordConfirm.buttonState}
 					</span>
 				</div>
 

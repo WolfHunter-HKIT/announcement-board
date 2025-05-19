@@ -1,11 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap");
 .login-card {
+  align-self: center;
   background-color: #1a1b1f;
   border-radius: 16px;
   padding: 32px;
   width: 40vw;
   min-width: 400px;
   max-width: 550px;
+  max-height: 450px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   font-family: "JetBrains Mono", monospace;
 }
