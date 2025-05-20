@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../styles/signupPage.css';
+import axios from 'axios';
+import VerifyPassword from '../auth/VerifyPassword';
 
 const SignupPage = () => {
 	const [username, setUsername] = useState('');
@@ -15,6 +17,30 @@ const SignupPage = () => {
 		reveal: 'password',
 		buttonState: 'Show',
 	});
+	const navigate = useNavigate();
+
+	const handleSingup = async (e) => {
+		e.preventDefault();
+		console.log(password.content, passwordConfirm.content);
+		if (password.content === passwordConfirm.content) {
+			const user = {
+				displayName: username,
+				email: email,
+				password: password.content,
+			};
+			await axios
+				.post('http://localhost:3000/users', user)
+				.then((res) => {})
+				.catch((error) => {
+					console.error('Error creating user:', error);
+				});
+			await axios.post('http://localhost:3000/verify', {
+				email: email,
+				password: password.content,
+			})
+			navigate('/')
+		}
+	};
 
 	const togglePassword = () => {
 		setPassword((prev) => ({
@@ -34,7 +60,7 @@ const SignupPage = () => {
 	return (
 		<div className='signup-card auth-card'>
 			<h1 className='signup-title'>Create an Account</h1>
-			<form className='signup-form'>
+			<form className='signup-form' onSubmit={handleSingup}>
 				<label htmlFor='username'>Username</label>
 				<input type='text' id='username' placeholder='yourname' value={username} onChange={(e) => setUsername(e.target.value)} required />
 

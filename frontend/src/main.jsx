@@ -10,6 +10,7 @@ import LoginPage from './pages/loginPage';
 import SignupPage from './pages/signupPage';
 import AdminPage from './pages/adminPage';
 import axios from 'axios';
+import CreateAnnouncement from './pages/createAnnouncement';
 
 export const database = 'http://localhost:3000/';
 
@@ -26,6 +27,7 @@ container._root.render(
 			<Route path='/login' element={<LoginPage />} />
 			<Route path='/signup' element={<SignupPage />} />
 			<Route path='/admin' element={<AdminPage />} />
+			<Route path='/createAnnouncement' element={<CreateAnnouncement />} />
 		</Routes>
 	</BrowserRouter>
 );

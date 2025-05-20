@@ -1,6 +1,6 @@
 import { use, useEffect, useState } from 'react';
 import '../styles/loginPage.css';
-import FetchAll from '../sql/FetchAll';
+// import FetchAll from '../components/snippets/FetchAll';
 import { Link, useNavigate } from 'react-router-dom';
 import VerifyPassword from '../auth/VerifyPassword';
 
@@ -13,19 +13,9 @@ const LoginPage = () => {
 		buttonState: 'Show',
 	});
 
-	useEffect(() => {
-		const fetchData = async () => {
-			const data = await FetchAll('users');
-			console.log(data);
-		};
-
-		fetchData();
-	}, []);
-
 	const handleLogin = async (e) => {
 		e.preventDefault();
 		const res = await VerifyPassword(email, password.content);
-		console.log(res);
 		if (res.data.success) {
 			navigate('/');
 		}
@@ -59,6 +49,11 @@ const LoginPage = () => {
 								content: e.target.value,
 							}))
 						}
+						onKeyDown={(e) => {
+							if (e.key === 'Enter') {
+								handleLogin(e);
+							}
+						}}
 						required
 					/>
 					<span className='toggle-password' onClick={togglePassword}>

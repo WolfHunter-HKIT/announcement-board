@@ -20,7 +20,7 @@ export default (db) => {
 			if (table === 'users' && data.password) {
 				const hashedPassword = await bcrypt.hash(data.password, 10);
 				delete data.password;
-				data.password_hash = hashedPassword;
+				data.password = hashedPassword;
 			}
 
 			const result = await insert(db, table, key, data);

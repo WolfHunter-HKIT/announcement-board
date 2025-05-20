@@ -5,8 +5,8 @@ const VerifyLogin = async () => {
 		const res = await axios.get('http://localhost:3000/protected');
 		return res.data;
 	} catch (err) {
-		console.error(err);
-		throw err;
+		console.warn('User not logged in or token invalid:', err.response?.data || err.message);
+		return { user: null, isLoggedIn: false };
 	}
 };
 

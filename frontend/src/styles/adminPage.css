@@ -1,1 +1,109 @@
-/*# sourceMappingURL=adminPage.css.map */
+.admin-page {
+  padding: 32px;
+  font-family: var(--font-family);
+  color: var(--color-text);
+}
+.admin-page .user-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.admin-page .user-table th,
+.admin-page .user-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--color-border);
+  text-align: left;
+}
+.admin-page .user-table th {
+  background-color: var(--color-surface-elevated);
+  color: var(--color-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+.admin-page .user-table tr:hover {
+  background-color: var(--color-surface-hover);
+}
+.admin-page .user-table button {
+  margin-right: 8px;
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: 4px;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface-elevated);
+  color: var(--color-text);
+  cursor: pointer;
+}
+.admin-page .user-table button:hover {
+  background-color: var(--color-primary-hover);
+  color: white;
+}
+.admin-page .modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.admin-page .modal .modal-content {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  padding: 24px;
+  width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  font-family: var(--font-family);
+}
+.admin-page .modal .modal-content h3 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 20px;
+  color: var(--color-primary);
+}
+.admin-page .modal .modal-content label {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+.admin-page .modal .modal-content label input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background-color: var(--color-surface-elevated);
+  color: var(--color-text);
+  font-family: var(--font-family);
+  margin-top: 4px;
+  box-sizing: border-box;
+}
+.admin-page .modal .modal-content .modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+  gap: 12px;
+}
+.admin-page .modal .modal-content .modal-actions button {
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 6px;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface-elevated);
+  color: var(--color-text);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.admin-page .modal .modal-content .modal-actions button:hover {
+  background-color: var(--color-primary-hover);
+  color: white;
+  border-color: var(--color-primary-hover);
+}/*# sourceMappingURL=adminPage.css.map */
