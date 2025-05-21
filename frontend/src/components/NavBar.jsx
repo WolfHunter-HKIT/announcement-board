@@ -28,18 +28,20 @@ const NavBar = () => {
 
 	return (
 		<nav className='navbar'>
-			<div className='nav-brand'>MyApp</div>
+			<Link to='/' className='nav-brand'>
+				MyApp
+			</Link>
 			<ul className='nav-links'>
 				<li style={{ display: isAdmin ? 'block' : 'none' }}>
-					<Link to={'/admin'}>Admin Panel</Link>
+					<Link to='/admin'>Admin Panel</Link>
 				</li>
 				{!isLoggedIn && (
 					<>
 						<li>
-							<Link to={'/login'}>Log In</Link>
+							<Link to='/login'>Log In</Link>
 						</li>
 						<li>
-							<Link to={'/signup'}>Sign Up</Link>
+							<Link to='/signup'>Sign Up</Link>
 						</li>
 					</>
 				)}

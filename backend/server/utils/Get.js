@@ -27,3 +27,13 @@ export const selectOne = (db, table, key, id) => {
 		});
 	});
 };
+
+export const selectAllByAnnouncementID = (db, table, announcementID) => {
+	const sql = `SELECT * FROM \`${table}\` WHERE \`announcementID\` = ?`;
+	return new Promise((resolve, reject) => {
+		db.query(sql, [announcementID], (err, results) => {
+			if (err) return reject(err);
+			resolve(results);
+		});
+	});
+};
