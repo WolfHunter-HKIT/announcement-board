@@ -64,6 +64,12 @@ Common commands:
 
 ---
 
+## 💡 Database Configuration
+
+### If self-hosting your database:
+
+Don't forget to update the database connection pool settings in `/backend/server.js` to reflect your local or hosted database configuration.
+
 ## 🧹 Cleaning Up
 
 If you're using processes started in the background, you may need to kill them manually:
