@@ -2,12 +2,12 @@ import axios from 'axios';
 
 const VerifyPassword = async (email, password) => {
 	try {
-		const response = await axios.post('http://localhost:3000/verify', {
+		const res = await axios.post('http://localhost:3000/verify', {
 			email,
 			password,
 		});
 
-		console.log('Login success:', response.data);
+		return res;
 	} catch (error) {
 		if (error.response) {
 			// Server responded with status outside 2xx

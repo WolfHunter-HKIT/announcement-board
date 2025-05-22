@@ -33,9 +33,7 @@ cd ../backend && bun install
 
 ## 🧪 Development
 
--   Make a session auth token
--   Check user with the token
--   Finish sign up logic
+-   Add liking feature
 
 ### 🔁 Start both frontend and backend
 

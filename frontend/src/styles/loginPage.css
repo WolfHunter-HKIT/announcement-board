@@ -1,11 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap");
 .login-card {
+  align-self: center;
   background-color: #1a1b1f;
   border-radius: 16px;
   padding: 32px;
   width: 40vw;
   min-width: 400px;
   max-width: 550px;
+  max-height: 450px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   font-family: "JetBrains Mono", monospace;
 }
@@ -73,4 +75,56 @@
 }
 .login-card .signup-text a:hover {
   text-decoration: underline;
+}
+@media (max-width: 768px) {
+  .login-card {
+    width: 80vw;
+    min-width: auto;
+    max-width: none;
+    padding: 24px;
+    max-height: none;
+  }
+  .login-card .login-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  .login-card .login-form {
+    gap: 12px;
+  }
+  .login-card .login-form input {
+    font-size: 14px;
+    padding: 10px;
+  }
+  .login-card .login-form button {
+    font-size: 14px;
+    padding: 10px;
+  }
+  .login-card .signup-text {
+    font-size: 13px;
+    margin-top: 16px;
+  }
+}
+@media (max-width: 400px) {
+  .login-card {
+    width: 90vw;
+    padding: 16px;
+  }
+  .login-card .login-title {
+    font-size: 20px;
+  }
+  .login-card .login-form {
+    gap: 10px;
+  }
+  .login-card .login-form input {
+    padding: 8px;
+    font-size: 13px;
+  }
+  .login-card .login-form button {
+    padding: 8px;
+    font-size: 13px;
+  }
+  .login-card .signup-text {
+    font-size: 12px;
+    margin-top: 12px;
+  }
 }/*# sourceMappingURL=loginPage.css.map */

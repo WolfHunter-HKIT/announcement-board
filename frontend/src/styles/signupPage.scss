@@ -1,14 +1,27 @@
 @import 'index.scss'; // Assuming your global styles and variables are in index.scss
 
+body,
+html {
+	height: 100vh;
+}
+
 .signup-card {
+	box-sizing: border-box;
+	align-self: center;
 	background-color: var(--color-surface);
 	border-radius: 16px;
-	padding: 32px;
-	width: 40vw;
-	min-width: 400px;
+	padding: 24px 16px;
+	width: 100%;
 	max-width: 550px;
+	min-width: 280px;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 	font-family: var(--font-family);
+
+	@media (max-width: 600px) {
+		width: 95vw;
+		padding: 20px 12px;
+		min-width: unset;
+	}
 
 	.signup-title {
 		text-align: center;
@@ -80,5 +93,13 @@
 				text-decoration: underline;
 			}
 		}
+	}
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+	.signup-card {
+		width: 90vw;
+		padding: 24px;
 	}
 }

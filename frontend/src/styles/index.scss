@@ -34,7 +34,8 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	height: 100%;
+	min-height: 100%;
+	min-width: 100%;
 	font-family: var(--font-family);
 	background-color: var(--color-bg);
 	color: var(--color-text);
@@ -44,6 +45,15 @@ body {
 
 body {
 	line-height: 1.6;
+}
+
+#root {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	min-width: 100%;
+	min-height: 100%;
 }
 
 a {
@@ -71,7 +81,7 @@ button {
 	cursor: pointer;
 }
 
-// ===== Utility Classes (Optional) =====
+// ===== Utility Classes =====
 .text-muted {
 	color: var(--color-muted);
 }

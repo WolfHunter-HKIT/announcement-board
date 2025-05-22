@@ -1,30 +1,66 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../styles/signupPage.css';
+import axios from 'axios';
+import VerifyPassword from '../auth/VerifyPassword';
 
 const SignupPage = () => {
 	const [username, setUsername] = useState('');
 	const [email, setEmail] = useState('');
-	const [password, setPassword] = useState('');
-	const [passwordReveal, setPasswordReveal] = useState('password');
-	const [passwordButton, setPasswordButton] = useState('Show');
-	const [passwordConfirm, setPasswordConfirm] = useState('');
-	const [passwordConfirmReveal, setPasswordConfirmReveal] = useState('password');
-	const [passwordConfirmButton, setPasswordConfirmButton] = useState('Show');
+	const [password, setPassword] = useState({
+		content: '',
+		reveal: 'password',
+		buttonState: 'Show',
+	});
+	const [passwordConfirm, setPasswordConfirm] = useState({
+		content: '',
+		reveal: 'password',
+		buttonState: 'Show',
+	});
+	const navigate = useNavigate();
+
+	const handleSingup = async (e) => {
+		e.preventDefault();
+		console.log(password.content, passwordConfirm.content);
+		if (password.content === passwordConfirm.content) {
+			const user = {
+				displayName: username,
+				email: email,
+				password: password.content,
+			};
+			await axios
+				.post('http://localhost:3000/users', user)
+				.then((res) => {})
+				.catch((error) => {
+					console.error('Error creating user:', error);
+				});
+			await axios.post('http://localhost:3000/verify', {
+				email: email,
+				password: password.content,
+			})
+			navigate('/')
+		}
+	};
 
 	const togglePassword = () => {
-		setPasswordReveal((prev) => (prev === 'password' ? 'text' : 'password'));
-		setPasswordButton((prev) => (prev === 'Show' ? 'Hide' : 'Show'));
+		setPassword((prev) => ({
+			...prev,
+			reveal: prev.reveal === 'password' ? 'text' : 'password',
+			buttonState: prev.buttonState === 'Show' ? 'Hide' : 'Show',
+		}));
 	};
 	const togglePasswordConfirm = () => {
-		setPasswordConfirmReveal((prev) => (prev === 'password' ? 'text' : 'password'));
-		setPasswordConfirmButton((prev) => (prev === 'Show' ? 'Hide' : 'Show'));
+		setPasswordConfirm((prev) => ({
+			...prev,
+			reveal: prev.reveal === 'password' ? 'text' : 'password',
+			buttonState: prev.buttonState === 'Show' ? 'Hide' : 'Show',
+		}));
 	};
 
 	return (
 		<div className='signup-card auth-card'>
 			<h1 className='signup-title'>Create an Account</h1>
-			<form className='signup-form'>
+			<form className='signup-form' onSubmit={handleSingup}>
 				<label htmlFor='username'>Username</label>
 				<input type='text' id='username' placeholder='yourname' value={username} onChange={(e) => setUsername(e.target.value)} required />
 
@@ -33,17 +69,31 @@ const SignupPage = () => {
 
 				<label htmlFor='password'>Password</label>
 				<div className='password-wrapper'>
-					<input type={passwordReveal} id='password' placeholder='••••••••' value={password} onChange={(e) => setPassword(e.target.value)} required />
+					<input
+						type={password.reveal}
+						id='password'
+						placeholder='••••••••'
+						value={password.content}
+						onChange={(e) => setPassword((prev) => ({ ...prev, content: e.target.value }))}
+						required
+					/>
 					<span className='toggle-password' onClick={togglePassword}>
-						{passwordButton}
+						{password.buttonState}
 					</span>
 				</div>
 
 				<label htmlFor='passwordConfirm'>Confirm Password</label>
 				<div className='password-wrapper'>
-					<input type={passwordConfirmReveal} id='passwordConfirm' placeholder='••••••••' value={passwordConfirm} onChange={(e) => setPasswordConfirm(e.target.value)} required />
+					<input
+						type={passwordConfirm.reveal}
+						id='passwordConfirm'
+						placeholder='••••••••'
+						value={passwordConfirm.content}
+						onChange={(e) => setPasswordConfirm((prev) => ({ ...prev, content: e.target.value }))}
+						required
+					/>
 					<span className='toggle-password' onClick={togglePasswordConfirm}>
-						{passwordConfirmButton}
+						{passwordConfirm.buttonState}
 					</span>
 				</div>
 
