@@ -33,8 +33,6 @@ cd ../backend && bun install
 
 ## 🧪 Development
 
--   Add liking feature
-
 ### 🔁 Start both frontend and backend
 
 #### On **Git Bash / WSL / Linux / macOS**:
