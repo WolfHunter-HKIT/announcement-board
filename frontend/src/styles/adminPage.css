@@ -1,7 +1,13 @@
+body,
+html {
+  height: auto;
+}
+
 .admin-page {
   padding: 32px;
   font-family: var(--font-family);
   color: var(--color-text);
+  /* Responsive layout for small screens */
 }
 .admin-page .user-table {
   width: 100%;
@@ -41,6 +47,57 @@
   background-color: var(--color-primary-hover);
   color: white;
 }
+@media (max-width: 600px) {
+  .admin-page .user-table {
+    border: none;
+    border-radius: 0;
+  }
+  .admin-page .user-table thead {
+    display: none;
+  }
+  .admin-page .user-table tbody,
+  .admin-page .user-table tr {
+    display: block;
+    width: 100%;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background-color: var(--color-surface);
+    padding: 16px;
+  }
+  .admin-page .user-table tr:hover {
+    background-color: var(--color-surface);
+  }
+  .admin-page .user-table td {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: none;
+    text-align: left;
+    font-size: 14px;
+    /* Label before each cell */
+  }
+  .admin-page .user-table td:last-child {
+    display: flex;
+    justify-content: flex-start;
+    gap: 8px;
+    flex-wrap: wrap;
+    padding-top: 12px;
+  }
+  .admin-page .user-table td:before {
+    content: attr(data-label);
+    flex-basis: 40%;
+    font-weight: 600;
+    color: var(--color-muted);
+    text-transform: uppercase;
+  }
+  .admin-page .user-table button {
+    margin: 0;
+    padding: 8px 12px;
+    font-size: 14px;
+    flex: 1 1 auto;
+    white-space: nowrap;
+  }
+}
 .admin-page .modal {
   position: fixed;
   top: 0;
@@ -52,6 +109,7 @@
   align-items: center;
   justify-content: center;
   z-index: 1000;
+  /* Modal full width on very small screens */
 }
 .admin-page .modal .modal-content {
   background-color: var(--color-surface);
@@ -106,4 +164,9 @@
   background-color: var(--color-primary-hover);
   color: white;
   border-color: var(--color-primary-hover);
+}
+@media (max-width: 400px) {
+  .admin-page .modal .modal-content {
+    width: 90%;
+  }
 }/*# sourceMappingURL=adminPage.css.map */

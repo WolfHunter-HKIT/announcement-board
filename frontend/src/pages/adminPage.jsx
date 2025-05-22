@@ -99,11 +99,11 @@ const AdminPage = () => {
 				<tbody>
 					{users.map((user) => (
 						<tr key={user.userID}>
-							<td>{user.userID}</td>
-							<td>{user.displayName}</td>
-							<td>{user.email}</td>
-							<td>{user.isAdmin ? 'Yes' : 'No'}</td>
-							<td>
+							<td data-label='ID'>{user.userID}</td>
+							<td data-label='Username'>{user.displayName}</td>
+							<td data-label='Email'>{user.email}</td>
+							<td data-label='Admin'>{user.isAdmin ? 'Yes' : 'No'}</td>
+							<td data-label='Actions'>
 								{user.isAdmin ? (
 									<span>Protected</span>
 								) : (

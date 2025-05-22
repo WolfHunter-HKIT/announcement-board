@@ -71,4 +71,48 @@
 .create-announcement-page .back-button:hover {
   background-color: var(--color-primary-hover);
   color: white;
+}
+@media (max-width: 768px) {
+  .create-announcement-page {
+    padding: 16px;
+  }
+  .create-announcement-page .announcement-form {
+    gap: 16px;
+  }
+  .create-announcement-page .announcement-form label {
+    font-size: 13px;
+  }
+  .create-announcement-page .announcement-form label input,
+  .create-announcement-page .announcement-form label textarea,
+  .create-announcement-page .announcement-form label select {
+    padding: 8px;
+    font-size: 14px;
+  }
+  .create-announcement-page .announcement-form label textarea {
+    min-height: 80px;
+  }
+  .create-announcement-page .announcement-form button {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+  .create-announcement-page .back-button {
+    top: 16px;
+    left: 16px;
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+}
+@media (max-width: 400px) {
+  .create-announcement-page .announcement-form button {
+    width: 100%;
+    align-self: stretch;
+  }
+  .create-announcement-page .back-button {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 6px 10px;
+    font-size: 12px;
+    z-index: 1001;
+  }
 }/*# sourceMappingURL=createAnnouncement.css.map */

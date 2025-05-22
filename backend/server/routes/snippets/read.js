@@ -1,5 +1,5 @@
 import express from 'express';
-import { selectAll, selectOne, selectAllByAnnouncementID } from '../../utils/Get.js';
+import { selectAll, selectOne, selectAllByAnnouncementID, selectAllByUserID } from '../../utils/Get.js';
 import validate from '../../utils/Validate.js';
 import { primaryKeys } from '../index.js';
 
@@ -20,6 +20,24 @@ export default (db) => {
 				return res.status(404).json({ error: 'No comments found for this announcement.' });
 			}
 			res.json(comments); // Return all comments related to the announcementID
+		} catch (err) {
+			res.status(500).json(err);
+		}
+	});
+
+	router.get('/likes/:userID', async (req, res) => {
+		const { userID } = req.params;
+		const table = 'likes';
+
+		if (!userID) return res.status(400).json({ error: 'User ID is required' });
+
+		try {
+			// Fetch all likes related to the specific userID
+			const likes = await selectAllByUserID(db, table, userID);
+			if (likes.length === 0) {
+				return res.status(404).json({ error: 'No likes found for this user.' });
+			}
+			res.json(likes); // Return all likes related to the userID
 		} catch (err) {
 			res.status(500).json(err);
 		}

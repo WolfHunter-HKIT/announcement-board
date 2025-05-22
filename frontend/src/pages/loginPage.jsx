@@ -1,6 +1,5 @@
 import { use, useEffect, useState } from 'react';
 import '../styles/loginPage.css';
-// import FetchAll from '../components/snippets/FetchAll';
 import { Link, useNavigate } from 'react-router-dom';
 import VerifyPassword from '../auth/VerifyPassword';
 

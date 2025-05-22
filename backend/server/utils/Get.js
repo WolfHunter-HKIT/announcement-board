@@ -37,3 +37,13 @@ export const selectAllByAnnouncementID = (db, table, announcementID) => {
 		});
 	});
 };
+
+export const selectAllByUserID = (db, table, userID) => {
+	const sql = `SELECT * FROM \`${table}\` WHERE \`userID\` = ?`;
+	return new Promise((resolve, reject) => {
+		db.query(sql, [userID], (err, results) => {
+			if (err) return reject(err);
+			resolve(results);
+		});
+	});
+};

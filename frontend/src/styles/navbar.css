@@ -28,8 +28,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
-  width: 100%;
+  min-height: 100%;
+  min-width: 100%;
   font-family: var(--font-family);
   background-color: var(--color-bg);
   color: var(--color-text);
@@ -46,8 +46,8 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
 }
 
 a {
@@ -144,6 +144,7 @@ button {
   padding: 16px 24px;
   font-family: var(--font-family);
   border-bottom: 2px solid var(--color-border);
+  flex-wrap: wrap;
 }
 .navbar .nav-brand {
   text-decoration: none;
@@ -152,11 +153,13 @@ button {
   color: var(--color-primary);
   letter-spacing: 0.5px;
   text-transform: uppercase;
+  flex-shrink: 0;
 }
 .navbar .nav-links {
   display: flex;
   gap: 24px;
   list-style: none;
+  flex-wrap: nowrap;
 }
 .navbar .nav-links li a,
 .navbar .nav-links li button {
@@ -181,4 +184,26 @@ button {
   background-color: var(--color-primary-hover);
   color: white;
   border-color: var(--color-primary-hover);
+}
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .navbar .nav-links {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .navbar .nav-links li {
+    flex: 1 1 100%;
+  }
+  .navbar .nav-links li a,
+  .navbar .nav-links li button {
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
+    font-size: 16px;
+  }
 }/*# sourceMappingURL=navbar.css.map */

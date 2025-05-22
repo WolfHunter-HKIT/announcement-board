@@ -97,4 +97,65 @@ $border: #2e2f36;
 			}
 		}
 	}
+
+	// Responsive
+	@media (max-width: 768px) {
+		width: 80vw;
+		min-width: auto;
+		max-width: none;
+		padding: 24px;
+		max-height: none;
+
+		.login-title {
+			font-size: 24px;
+			margin-bottom: 20px;
+		}
+
+		.login-form {
+			gap: 12px;
+
+			input {
+				font-size: 14px;
+				padding: 10px;
+			}
+
+			button {
+				font-size: 14px;
+				padding: 10px;
+			}
+		}
+
+		.signup-text {
+			font-size: 13px;
+			margin-top: 16px;
+		}
+	}
+
+	@media (max-width: 400px) {
+		width: 90vw;
+		padding: 16px;
+
+		.login-title {
+			font-size: 20px;
+		}
+
+		.login-form {
+			gap: 10px;
+
+			input {
+				padding: 8px;
+				font-size: 13px;
+			}
+
+			button {
+				padding: 8px;
+				font-size: 13px;
+			}
+		}
+
+		.signup-text {
+			font-size: 12px;
+			margin-top: 12px;
+		}
+	}
 }

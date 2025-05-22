@@ -1,3 +1,8 @@
+body,
+html {
+	height: auto;
+}
+
 .admin-page {
 	padding: 32px;
 	font-family: var(--font-family);
@@ -43,6 +48,66 @@
 			&:hover {
 				background-color: var(--color-primary-hover);
 				color: white;
+			}
+		}
+	}
+
+	/* Responsive layout for small screens */
+	@media (max-width: 600px) {
+		.user-table {
+			border: none;
+			border-radius: 0;
+
+			thead {
+				display: none;
+			}
+
+			tbody,
+			tr {
+				display: block;
+				width: 100%;
+				border: 1px solid var(--color-border);
+				border-radius: 8px;
+				background-color: var(--color-surface);
+				padding: 16px;
+			}
+
+			tr:hover {
+				background-color: var(--color-surface);
+			}
+
+			td {
+				display: flex;
+				justify-content: space-between;
+				padding: 8px 0;
+				border-bottom: none;
+				text-align: left;
+				font-size: 14px;
+
+				&:last-child {
+					display: flex;
+					justify-content: flex-start;
+					gap: 8px;
+					flex-wrap: wrap;
+					padding-top: 12px;
+				}
+
+				/* Label before each cell */
+				&:before {
+					content: attr(data-label);
+					flex-basis: 40%;
+					font-weight: 600;
+					color: var(--color-muted);
+					text-transform: uppercase;
+				}
+			}
+
+			button {
+				margin: 0;
+				padding: 8px 12px;
+				font-size: 14px;
+				flex: 1 1 auto;
+				white-space: nowrap;
 			}
 		}
 	}
@@ -117,6 +182,13 @@
 						border-color: var(--color-primary-hover);
 					}
 				}
+			}
+		}
+
+		/* Modal full width on very small screens */
+		@media (max-width: 400px) {
+			.modal-content {
+				width: 90%;
 			}
 		}
 	}

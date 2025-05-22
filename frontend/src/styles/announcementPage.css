@@ -1,3 +1,7 @@
+body {
+  height: 100vh;
+}
+
 .announcement-page {
   display: flex;
   flex-direction: column;
@@ -105,4 +109,61 @@
   color: var(--color-muted);
   font-size: 14px;
   margin-top: 16px;
+}
+
+@media (max-width: 600px) {
+  .announcement-page .announcement-container {
+    width: 100vw;
+    max-width: 100%;
+    padding: 16px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    margin: auto 0;
+  }
+  .announcement-page .announcement-title {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+  .announcement-page .announcement-category {
+    font-size: 12px;
+    margin-bottom: 16px;
+  }
+  .announcement-page .announcement-content {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+  .announcement-page .comments-section {
+    padding-top: 16px;
+  }
+  .announcement-page .comments-section h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+  .announcement-page .comments-section .comment-list .comment-item {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  .announcement-page .comments-section .comment-list .comment-item .comment-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .announcement-page .comments-section .comment-list .comment-item .comment-header .comment-author {
+    font-size: 12px;
+  }
+  .announcement-page .comments-section .comment-list .comment-item .comment-header .delete-comment-button {
+    font-size: 14px;
+  }
+  .announcement-page .comments-section .comment-form textarea {
+    font-size: 13px;
+    padding: 6px;
+  }
+  .announcement-page .comments-section .comment-form button {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+  .announcement-page .comments-section .login-prompt {
+    font-size: 13px;
+    margin-top: 12px;
+  }
 }/*# sourceMappingURL=announcementPage.css.map */
